@@ -8,8 +8,13 @@ equipitem = function(v)
 	end
 end
 
+-- EquipTool
 for i,v in piars(LocalPlayer.Backpack:GetChildren()) do
     if v:IsA ("Tool") and v.Name:lower():find("rod") then
     equipitem(v.Name)
     end    
 end
+
+local Rod = LocalPlayer.Character:FindFirstChildOfClass("Tool")
+Rod.events.cast:FireServer(100,1)
+
