@@ -1,15 +1,15 @@
-local Player: Players = game:GetService(classname "Player")
-local LocalPlayer: Player = Player.LocalPlayer
+local player = game:GetService("Players")
+local LocalPlayer = Player.LocalPlayer
 
-equipitem = function(v: any): ()
-	if LocalPlayer.Backpack:FindFirstChild(v) then
-		local Eq: any = LocalPlayer.Backpack:FindFirstChild(v)
+equipitem = function(v)
+    if LocalPlayer.Backpack:FindFirstChild(v) then
+        local Eq = LocalPlayer.Backpack:FindFirstChild(v)
 		LocalPlayer.Character.Humanoid:EquipTool(Eq)
 	end
 end
 
-for i: any,v: any in pairs(LocalPlayer.Backpack:GetChildren()) do
+for i,v in piars(LocalPlayer.Backpack:GetChildren()) do
     if v:IsA ("Tool") and v.Name:lower():find("rod") then
-	    equipitem(v: v.Name)
-	end
+    equipitem(v.Name)
+    end    
 end
